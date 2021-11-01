@@ -7,25 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		842A698C2720323A007CFC49 /* Хранилище.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842A698B2720323A007CFC49 /* Хранилище.swift */; };
+		842A698C2720323A007CFC49 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842A698B2720323A007CFC49 /* Store.swift */; };
 		842A698E27204656007CFC49 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842A698D27204656007CFC49 /* TabBarViewController.swift */; };
-		8438A43C271EEC1B00791ED1 /* Ячейка таблицы доходов.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8438A43B271EEC1B00791ED1 /* Ячейка таблицы доходов.swift */; };
-		8438A43E271EFB4A00791ED1 /* Экран добавления доходов.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8438A43D271EFB4A00791ED1 /* Экран добавления доходов.swift */; };
-		843D71972722E08E00F44F56 /* Категории.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D71962722E08E00F44F56 /* Категории.swift */; };
-		844B305F2729473100A55A9C /* Экран добавления категории.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B305E2729473100A55A9C /* Экран добавления категории.swift */; };
-		8492E1922721CEE100B35C8C /* Charts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492E1912721CEE100B35C8C /* Charts.xcframework */; };
-		8492E1932721CEE100B35C8C /* Charts.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8492E1912721CEE100B35C8C /* Charts.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8430033E2730434200283B70 /* Charts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8430033D2730434200283B70 /* Charts.xcframework */; };
+		8430033F2730434200283B70 /* Charts.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8430033D2730434200283B70 /* Charts.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8438A43C271EEC1B00791ED1 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8438A43B271EEC1B00791ED1 /* CustomCell.swift */; };
+		8438A43E271EFB4A00791ED1 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8438A43D271EFB4A00791ED1 /* InfoViewController.swift */; };
+		843D71972722E08E00F44F56 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D71962722E08E00F44F56 /* Categories.swift */; };
+		844B305F2729473100A55A9C /* NewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B305E2729473100A55A9C /* NewCategoryViewController.swift */; };
 		84E2D7A1271EE40C00D476F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2D7A0271EE40C00D476F8 /* AppDelegate.swift */; };
 		84E2D7A3271EE40C00D476F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2D7A2271EE40C00D476F8 /* SceneDelegate.swift */; };
-		84E2D7A5271EE40C00D476F8 /* Экран списка доходов.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2D7A4271EE40C00D476F8 /* Экран списка доходов.swift */; };
+		84E2D7A5271EE40C00D476F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2D7A4271EE40C00D476F8 /* ViewController.swift */; };
 		84E2D7AB271EE40C00D476F8 /* Bank.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84E2D7A9271EE40C00D476F8 /* Bank.xcdatamodeld */; };
 		84E2D7AD271EE41000D476F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E2D7AC271EE41000D476F8 /* Assets.xcassets */; };
 		84E2D7B0271EE41000D476F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E2D7AE271EE41000D476F8 /* LaunchScreen.storyboard */; };
 		84E2D7BB271EE5BF00D476F8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2D7BA271EE5BF00D476F8 /* Model.swift */; };
-		84E2D7BD271EE78C00D476F8 /* Экран списка расходов.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2D7BC271EE78C00D476F8 /* Экран списка расходов.swift */; };
+		84E2D7BD271EE78C00D476F8 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2D7BC271EE78C00D476F8 /* SecondViewController.swift */; };
 		84E2D7BF271EE79A00D476F8 /* Charts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2D7BE271EE79A00D476F8 /* Charts.swift */; };
-		84F5AA3A2720607D0086DDCF /* Экран добавления расходов.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5AA392720607D0086DDCF /* Экран добавления расходов.swift */; };
-		84F5AA3C272062910086DDCF /* Ячейка таблицы расходов.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5AA3B272062910086DDCF /* Ячейка таблицы расходов.swift */; };
+		84F5AA3A2720607D0086DDCF /* InfoViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5AA392720607D0086DDCF /* InfoViewController2.swift */; };
+		84F5AA3C272062910086DDCF /* CustomCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5AA3B272062910086DDCF /* CustomCell2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,7 +35,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8492E1932721CEE100B35C8C /* Charts.xcframework in Embed Frameworks */,
+				8430033F2730434200283B70 /* Charts.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,28 +43,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		842A698B2720323A007CFC49 /* Хранилище.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Хранилище.swift"; sourceTree = "<group>"; };
+		842A698B2720323A007CFC49 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		842A698D27204656007CFC49 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		8438A43B271EEC1B00791ED1 /* Ячейка таблицы доходов.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ячейка таблицы доходов.swift"; sourceTree = "<group>"; };
-		8438A43D271EFB4A00791ED1 /* Экран добавления доходов.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Экран добавления доходов.swift"; sourceTree = "<group>"; };
-		843D71962722E08E00F44F56 /* Категории.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Категории.swift"; sourceTree = "<group>"; };
-		844B305E2729473100A55A9C /* Экран добавления категории.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Экран добавления категории.swift"; sourceTree = "<group>"; };
-		8492E1902721CEC900B35C8C /* Shared */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Shared; path = ../../../../Shared; sourceTree = "<group>"; };
-		8492E1912721CEE100B35C8C /* Charts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Charts.xcframework; path = ../../../Carthage/Build/Charts.xcframework; sourceTree = "<group>"; };
-		8492E1942721CF1100B35C8C /* Charts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Charts; path = ../../../Carthage/Checkouts/Charts; sourceTree = "<group>"; };
+		8430033D2730434200283B70 /* Charts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Charts.xcframework; path = ../../../../Carthage/Build/Charts.xcframework; sourceTree = "<group>"; };
+		8438A43B271EEC1B00791ED1 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		8438A43D271EFB4A00791ED1 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		843D71962722E08E00F44F56 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		844B305E2729473100A55A9C /* NewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewController.swift; sourceTree = "<group>"; };
 		84E2D79D271EE40C00D476F8 /* Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E2D7A0271EE40C00D476F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84E2D7A2271EE40C00D476F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		84E2D7A4271EE40C00D476F8 /* Экран списка доходов.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Экран списка доходов.swift"; sourceTree = "<group>"; };
+		84E2D7A4271EE40C00D476F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84E2D7AA271EE40C00D476F8 /* Bank.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bank.xcdatamodel; sourceTree = "<group>"; };
 		84E2D7AC271EE41000D476F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84E2D7AF271EE41000D476F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84E2D7B1271EE41000D476F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84E2D7BA271EE5BF00D476F8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		84E2D7BC271EE78C00D476F8 /* Экран списка расходов.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Экран списка расходов.swift"; sourceTree = "<group>"; };
+		84E2D7BC271EE78C00D476F8 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		84E2D7BE271EE79A00D476F8 /* Charts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts.swift; sourceTree = "<group>"; };
-		84F5AA392720607D0086DDCF /* Экран добавления расходов.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Экран добавления расходов.swift"; sourceTree = "<group>"; };
-		84F5AA3B272062910086DDCF /* Ячейка таблицы расходов.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ячейка таблицы расходов.swift"; sourceTree = "<group>"; };
+		84F5AA392720607D0086DDCF /* InfoViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController2.swift; sourceTree = "<group>"; };
+		84F5AA3B272062910086DDCF /* CustomCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8492E1922721CEE100B35C8C /* Charts.xcframework in Frameworks */,
+				8430033E2730434200283B70 /* Charts.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,9 +80,7 @@
 		84A48F1F272179E600A18F56 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8492E1942721CF1100B35C8C /* Charts */,
-				8492E1912721CEE100B35C8C /* Charts.xcframework */,
-				8492E1902721CEC900B35C8C /* Shared */,
+				8430033D2730434200283B70 /* Charts.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -124,17 +120,17 @@
 			isa = PBXGroup;
 			children = (
 				842A698D27204656007CFC49 /* TabBarViewController.swift */,
-				84E2D7A4271EE40C00D476F8 /* Экран списка доходов.swift */,
-				8438A43D271EFB4A00791ED1 /* Экран добавления доходов.swift */,
-				8438A43B271EEC1B00791ED1 /* Ячейка таблицы доходов.swift */,
+				84E2D7A4271EE40C00D476F8 /* ViewController.swift */,
+				8438A43D271EFB4A00791ED1 /* InfoViewController.swift */,
+				8438A43B271EEC1B00791ED1 /* CustomCell.swift */,
 				84E2D7BA271EE5BF00D476F8 /* Model.swift */,
-				842A698B2720323A007CFC49 /* Хранилище.swift */,
-				84E2D7BC271EE78C00D476F8 /* Экран списка расходов.swift */,
-				84F5AA392720607D0086DDCF /* Экран добавления расходов.swift */,
-				844B305E2729473100A55A9C /* Экран добавления категории.swift */,
-				84F5AA3B272062910086DDCF /* Ячейка таблицы расходов.swift */,
+				842A698B2720323A007CFC49 /* Store.swift */,
+				84E2D7BC271EE78C00D476F8 /* SecondViewController.swift */,
+				84F5AA392720607D0086DDCF /* InfoViewController2.swift */,
+				844B305E2729473100A55A9C /* NewCategoryViewController.swift */,
+				84F5AA3B272062910086DDCF /* CustomCell2.swift */,
 				84E2D7BE271EE79A00D476F8 /* Charts.swift */,
-				843D71962722E08E00F44F56 /* Категории.swift */,
+				843D71962722E08E00F44F56 /* Categories.swift */,
 			);
 			path = MVC;
 			sourceTree = "<group>";
@@ -217,19 +213,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				842A698C2720323A007CFC49 /* Хранилище.swift in Sources */,
-				843D71972722E08E00F44F56 /* Категории.swift in Sources */,
-				84F5AA3A2720607D0086DDCF /* Экран добавления расходов.swift in Sources */,
-				84E2D7A5271EE40C00D476F8 /* Экран списка доходов.swift in Sources */,
+				842A698C2720323A007CFC49 /* Store.swift in Sources */,
+				843D71972722E08E00F44F56 /* Categories.swift in Sources */,
+				84F5AA3A2720607D0086DDCF /* InfoViewController2.swift in Sources */,
+				84E2D7A5271EE40C00D476F8 /* ViewController.swift in Sources */,
 				842A698E27204656007CFC49 /* TabBarViewController.swift in Sources */,
-				84F5AA3C272062910086DDCF /* Ячейка таблицы расходов.swift in Sources */,
-				8438A43E271EFB4A00791ED1 /* Экран добавления доходов.swift in Sources */,
-				844B305F2729473100A55A9C /* Экран добавления категории.swift in Sources */,
-				8438A43C271EEC1B00791ED1 /* Ячейка таблицы доходов.swift in Sources */,
+				84F5AA3C272062910086DDCF /* CustomCell2.swift in Sources */,
+				8438A43E271EFB4A00791ED1 /* InfoViewController.swift in Sources */,
+				844B305F2729473100A55A9C /* NewCategoryViewController.swift in Sources */,
+				8438A43C271EEC1B00791ED1 /* CustomCell.swift in Sources */,
 				84E2D7AB271EE40C00D476F8 /* Bank.xcdatamodeld in Sources */,
 				84E2D7A1271EE40C00D476F8 /* AppDelegate.swift in Sources */,
 				84E2D7BB271EE5BF00D476F8 /* Model.swift in Sources */,
-				84E2D7BD271EE78C00D476F8 /* Экран списка расходов.swift in Sources */,
+				84E2D7BD271EE78C00D476F8 /* SecondViewController.swift in Sources */,
 				84E2D7BF271EE79A00D476F8 /* Charts.swift in Sources */,
 				84E2D7A3271EE40C00D476F8 /* SceneDelegate.swift in Sources */,
 			);

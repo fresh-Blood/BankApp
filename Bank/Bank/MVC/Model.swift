@@ -11,9 +11,9 @@ import UIKit
 
 class Income: NSObject,NSCoding {
     
-    var date: String
+    let date: String
     var source: String
-    var summ: String
+    let summ: String
     
     init(date:String, source: String, summ:String) {
         self.summ = summ
