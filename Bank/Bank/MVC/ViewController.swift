@@ -116,6 +116,7 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         myTableView.reloadData()
     }
     override func viewDidLayoutSubviews() {
@@ -131,6 +132,7 @@ class ViewController: UIViewController {
         summLabel.frame = CGRect(x: view.bounds.width*0.61, y: view.bounds.height/3-30, width: view.bounds.width/3, height: 20)
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         balanceValue.text = "\(ViewModel.shared.balance)"
     }
 }

@@ -136,10 +136,12 @@ class SecondViewController: UIViewController {
         balanceValue.text = String(ViewModel.shared.balance)
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         balanceValue.text = "\(ViewModel.shared.balance)"
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         myTableView.reloadData()
     }
     override func viewDidLayoutSubviews() {

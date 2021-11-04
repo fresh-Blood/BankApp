@@ -141,6 +141,7 @@ class ThirdViewController: UIViewController, ChartViewDelegate {
         print(entry)
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         switch counter {
         case 1:
             customizeChart(categories: Categories.share.incomeCategoriesMonth, values: Categories.share.incomeSummsMonth)
