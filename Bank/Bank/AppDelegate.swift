@@ -11,8 +11,6 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         ViewModel.shared.incomeArray = Store.income
         ViewModel.shared.balance = Store.balance
@@ -21,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Categories.share.incomeSummsAllTime = Store.incomeSummsAllTime
         Categories.share.expensesCategoriesAllTime = Store.expensesCategoriesAllTime
         Categories.share.expensesSummsAllTime = Store.expensesSummsAllTime
-        
         return true
     }
 
