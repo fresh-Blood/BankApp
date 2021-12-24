@@ -88,20 +88,25 @@ final class ViewController: UIViewController {
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
     }
+    private let scrollView: UIScrollView = {
+       let scr = UIScrollView()
+        return scr
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         myTableView.delegate = self
         myTableView.dataSource = self
         setBackgrPicture()
-        view.addSubview(myTableView)
-        view.addSubview(balanceLabel)
-        view.addSubview(balanceValue)
-        view.addSubview(income)
-        view.addSubview(addButton)
-        view.addSubview(dateLabel)
-        view.addSubview(sourceLabel)
-        view.addSubview(summLabel)
+        view.addSubview(scrollView)
+        scrollView.addSubview(myTableView)
+        scrollView.addSubview(balanceLabel)
+        scrollView.addSubview(balanceValue)
+        scrollView.addSubview(income)
+        scrollView.addSubview(addButton)
+        scrollView.addSubview(dateLabel)
+        scrollView.addSubview(sourceLabel)
+        scrollView.addSubview(summLabel)
         NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(loadList1), name: NSNotification.Name(rawValue: "load1"), object: nil)
     }
@@ -121,6 +126,11 @@ final class ViewController: UIViewController {
         super.viewDidLayoutSubviews()
         view.layoutIfNeeded()
         let inset: CGFloat = 10
+        scrollView.contentSize = CGSize(width: view.bounds.width, height: view.bounds.width+10)
+        scrollView.frame = CGRect(x: view.bounds.minX,
+                                  y: view.bounds.minY,
+                                  width: view.bounds.width,
+                                  height: view.bounds.height + inset)
         balanceLabel.frame = CGRect(x: view.bounds.minX + inset,
                                     y: inset,
                                     width: view.bounds.width/2,
