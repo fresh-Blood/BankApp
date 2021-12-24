@@ -1,56 +1,48 @@
-//
-//  ViewModel2.swift
-//  Bank
-//
-//  Created by Admin on 20.10.2021.
-//
-
 import Foundation
 import UIKit
 
 
-class InfoViewController2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+final class InfoViewController2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
-    let dropDown: UIPickerView = {
+    private let dropDown: UIPickerView = {
         let pkr = UIPickerView()
         pkr.backgroundColor = .systemGray6
         return pkr
     }()
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    internal func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    internal func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return Categories.share.listExpenses.count
     }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    internal func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         self.view.endEditing(true)
         return Categories.share.listExpenses[row]
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    internal func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.source.text = Categories.share.listExpenses[row]
         self.dropDown.isHidden = true
     }
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    internal func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == self.source {
             self.dropDown.isHidden = false
             textField.endEditing(true)
         }
     }
-    static let shared = InfoViewController2()
     
-    let data: UITextField = {
+    private let data: UITextField = {
         let txt = UITextField()
         txt.backgroundColor = .white
         txt.placeholder = " Укажите дату"
         return txt
     }()
-    let datePicker = UIDatePicker()
-    let toolBar = UIToolbar()
+    private let datePicker = UIDatePicker()
+    private let toolBar = UIToolbar()
     
-    func showDatePicker() {
+    private func showDatePicker() {
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.frame = CGRect(x: view.frame.minX, y: view.frame.height/3, width: view.frame.width, height: datePicker.bounds.height)
         toolBar.sizeToFit()
@@ -61,7 +53,7 @@ class InfoViewController2: UIViewController, UIPickerViewDelegate, UIPickerViewD
         data.inputView = datePicker
         data.inputAccessoryView = toolBar
     }
-    @objc func doneDatePicker() {
+    @objc private func doneDatePicker() {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.timeStyle = .short
@@ -69,17 +61,17 @@ class InfoViewController2: UIViewController, UIPickerViewDelegate, UIPickerViewD
         data.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
-    @objc func cancelDatePicker() {
+    @objc private func cancelDatePicker() {
         self.view.endEditing(true)
     }
     
-    let source: UITextField = {
+    private let source: UITextField = {
         let txt = UITextField()
         txt.placeholder = " Укажите категорию"
         txt.backgroundColor = .white
         return txt
     }()
-    let summ: UITextField = {
+    private let summ: UITextField = {
         let txt = UITextField()
         txt.placeholder = " Введите сумму"
         txt.keyboardType = .numberPad
@@ -87,7 +79,7 @@ class InfoViewController2: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         return txt
     }()
-    let button: UIButton = {
+    private let button: UIButton = {
         let btn = UIButton()
         btn.backgroundColor = .purple
         btn.addTarget(self, action: #selector(action3), for: .touchUpInside)
@@ -100,7 +92,7 @@ class InfoViewController2: UIViewController, UIPickerViewDelegate, UIPickerViewD
         btn.layer.shadowOffset = CGSize.init(width: 2.0, height: 2.0)
         return btn
     }()
-    @objc func action3(sender: UIButton!) {
+    @objc private func action3(sender: UIButton!) {
         if !(data.text?.isEmpty ?? true) && !(source.text?.isEmpty ?? true) && !(summ.text?.isEmpty ?? true) {
             sender.pulsate()
             ViewModel.shared.date = data.text ?? "error"
@@ -125,7 +117,7 @@ class InfoViewController2: UIViewController, UIPickerViewDelegate, UIPickerViewD
     source.text = ""
     summ.text = ""
 }
-    func setBackgrPicture() {
+    private func setBackgrPicture() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "59ee6b4da2389.png")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill

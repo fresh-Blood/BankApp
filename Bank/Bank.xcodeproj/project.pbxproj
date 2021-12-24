@@ -9,12 +9,11 @@
 /* Begin PBXBuildFile section */
 		842A698C2720323A007CFC49 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842A698B2720323A007CFC49 /* Store.swift */; };
 		842A698E27204656007CFC49 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842A698D27204656007CFC49 /* TabBarViewController.swift */; };
-		8430033E2730434200283B70 /* Charts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8430033D2730434200283B70 /* Charts.xcframework */; };
-		8430033F2730434200283B70 /* Charts.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8430033D2730434200283B70 /* Charts.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8438A43C271EEC1B00791ED1 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8438A43B271EEC1B00791ED1 /* CustomCell.swift */; };
 		8438A43E271EFB4A00791ED1 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8438A43D271EFB4A00791ED1 /* InfoViewController.swift */; };
 		843D71972722E08E00F44F56 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D71962722E08E00F44F56 /* Categories.swift */; };
 		844B305F2729473100A55A9C /* NewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B305E2729473100A55A9C /* NewCategoryViewController.swift */; };
+		8451AE9B2775B0D000073BC8 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 8451AE9A2775B0D000073BC8 /* Charts */; };
 		84E2D7A1271EE40C00D476F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2D7A0271EE40C00D476F8 /* AppDelegate.swift */; };
 		84E2D7A3271EE40C00D476F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2D7A2271EE40C00D476F8 /* SceneDelegate.swift */; };
 		84E2D7A5271EE40C00D476F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2D7A4271EE40C00D476F8 /* ViewController.swift */; };
@@ -28,24 +27,9 @@
 		84F5AA3C272062910086DDCF /* CustomCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5AA3B272062910086DDCF /* CustomCell2.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		8409342127217B3C00CA5DFE /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				8430033F2730434200283B70 /* Charts.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		842A698B2720323A007CFC49 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		842A698D27204656007CFC49 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		8430033D2730434200283B70 /* Charts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Charts.xcframework; path = ../../../../Carthage/Build/Charts.xcframework; sourceTree = "<group>"; };
 		8438A43B271EEC1B00791ED1 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		8438A43D271EFB4A00791ED1 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		843D71962722E08E00F44F56 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
@@ -70,17 +54,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8430033E2730434200283B70 /* Charts.xcframework in Frameworks */,
+				8451AE9B2775B0D000073BC8 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8451AE9C2775CCCD00073BC8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				842A698D27204656007CFC49 /* TabBarViewController.swift */,
+				84E2D7A4271EE40C00D476F8 /* ViewController.swift */,
+				8438A43D271EFB4A00791ED1 /* InfoViewController.swift */,
+				84E2D7BC271EE78C00D476F8 /* SecondViewController.swift */,
+				84F5AA392720607D0086DDCF /* InfoViewController2.swift */,
+				844B305E2729473100A55A9C /* NewCategoryViewController.swift */,
+				8438A43B271EEC1B00791ED1 /* CustomCell.swift */,
+				84F5AA3B272062910086DDCF /* CustomCell2.swift */,
+				84E2D7BE271EE79A00D476F8 /* Charts.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		84A48F1F272179E600A18F56 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8430033D2730434200283B70 /* Charts.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -119,17 +118,9 @@
 		84E2D7B9271EE5AE00D476F8 /* MVC */ = {
 			isa = PBXGroup;
 			children = (
-				842A698D27204656007CFC49 /* TabBarViewController.swift */,
-				84E2D7A4271EE40C00D476F8 /* ViewController.swift */,
-				8438A43D271EFB4A00791ED1 /* InfoViewController.swift */,
-				8438A43B271EEC1B00791ED1 /* CustomCell.swift */,
+				8451AE9C2775CCCD00073BC8 /* View */,
 				84E2D7BA271EE5BF00D476F8 /* Model.swift */,
 				842A698B2720323A007CFC49 /* Store.swift */,
-				84E2D7BC271EE78C00D476F8 /* SecondViewController.swift */,
-				84F5AA392720607D0086DDCF /* InfoViewController2.swift */,
-				844B305E2729473100A55A9C /* NewCategoryViewController.swift */,
-				84F5AA3B272062910086DDCF /* CustomCell2.swift */,
-				84E2D7BE271EE79A00D476F8 /* Charts.swift */,
 				843D71962722E08E00F44F56 /* Categories.swift */,
 			);
 			path = MVC;
@@ -145,7 +136,6 @@
 				84E2D799271EE40C00D476F8 /* Sources */,
 				84E2D79A271EE40C00D476F8 /* Frameworks */,
 				84E2D79B271EE40C00D476F8 /* Resources */,
-				8409342127217B3C00CA5DFE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -153,6 +143,7 @@
 			);
 			name = Bank;
 			packageProductDependencies = (
+				8451AE9A2775B0D000073BC8 /* Charts */,
 			);
 			productName = Bank;
 			productReference = 84E2D79D271EE40C00D476F8 /* Bank.app */;
@@ -183,9 +174,9 @@
 			);
 			mainGroup = 84E2D794271EE40C00D476F8;
 			packageReferences = (
-				844DC7142721761F00230D9A /* XCRemoteSwiftPackageReference "Charts" */,
 				844DC7192721773A00230D9A /* XCRemoteSwiftPackageReference "TinyConstraints" */,
 				844DC71C2721778100230D9A /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				8451AE992775B0D000073BC8 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 84E2D79E271EE40C00D476F8 /* Products */;
 			projectDirPath = "";
@@ -366,6 +357,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 62XGY8QWW9;
@@ -393,6 +385,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 62XGY8QWW9;
@@ -439,14 +432,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		844DC7142721761F00230D9A /* XCRemoteSwiftPackageReference "Charts" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/danielgindi/Charts";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
-			};
-		};
 		844DC7192721773A00230D9A /* XCRemoteSwiftPackageReference "TinyConstraints" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/roberthein/TinyConstraints";
@@ -463,7 +448,23 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		8451AE992775B0D000073BC8 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8451AE9A2775B0D000073BC8 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8451AE992775B0D000073BC8 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		84E2D7A9271EE40C00D476F8 /* Bank.xcdatamodeld */ = {

@@ -1,18 +1,11 @@
-//
-//  ThirdViewController.swift
-//  Bank
-//
-//  Created by Admin on 19.10.2021.
-//
-
 import UIKit
 import Charts
 
-class ThirdViewController: UIViewController, ChartViewDelegate {
+final class ThirdViewController: UIViewController, ChartViewDelegate {
     
     var counter = 0
     
-    let monthButton: UIButton = {
+    private let monthButton: UIButton = {
         let btn = UIButton()
         btn.backgroundColor = .systemBlue
         btn.layer.borderWidth = 1
@@ -22,7 +15,7 @@ class ThirdViewController: UIViewController, ChartViewDelegate {
         btn.setTitleColor(.black, for: .normal)
         return btn
     }()
-    @objc func action1(sender: UIButton!) {
+    @objc private func action1(sender: UIButton!) {
         print("Выбран период - месяц")
         sender.pulsate()
         pieIncomeChartView.removeFromSuperview()
@@ -35,7 +28,7 @@ class ThirdViewController: UIViewController, ChartViewDelegate {
         view.addSubview(pieIncomeChartView)
         view.addSubview(pieExpensesChartView)
     }
-    let yearButton: UIButton = {
+    private let yearButton: UIButton = {
         let btn = UIButton()
         btn.backgroundColor = .systemBlue
         btn.layer.borderWidth = 1
@@ -45,7 +38,7 @@ class ThirdViewController: UIViewController, ChartViewDelegate {
         btn.setTitleColor(.black, for: .normal)
         return btn
     }()
-    @objc func action2(sender: UIButton!) {
+    @objc private func action2(sender: UIButton!) {
         print("Выбран период - год")
         sender.pulsate()
         pieIncomeChartView.removeFromSuperview()
@@ -58,7 +51,7 @@ class ThirdViewController: UIViewController, ChartViewDelegate {
         view.addSubview(pieIncomeChartView)
         view.addSubview(pieExpensesChartView)
     }
-    let allTimeButton: UIButton = {
+    private let allTimeButton: UIButton = {
         let btn = UIButton()
         btn.backgroundColor = .systemBlue
         btn.layer.borderWidth = 1
@@ -68,7 +61,7 @@ class ThirdViewController: UIViewController, ChartViewDelegate {
         btn.setTitleColor(.black, for: .normal)
         return btn
     }()
-    @objc func action3(sender: UIButton!) {
+    @objc private func action3(sender: UIButton!) {
         sender.pulsate()
         print("Выбран период - все время")
         pieIncomeChartView.removeFromSuperview()
@@ -82,7 +75,7 @@ class ThirdViewController: UIViewController, ChartViewDelegate {
         view.addSubview(pieExpensesChartView)
     }
     
-    let stackView: UIStackView = {
+    private let stackView: UIStackView = {
        let stck = UIStackView()
         stck.isUserInteractionEnabled = true
         stck.backgroundColor = .clear
@@ -95,21 +88,21 @@ class ThirdViewController: UIViewController, ChartViewDelegate {
         return stck
     }()
     
-    let pieIncomeChartView: PieChartView = {
+    private let pieIncomeChartView: PieChartView = {
        let view = PieChartView()
         view.backgroundColor = .clear
         view.centerAttributedText = NSAttributedString("Доходы")
-        view.chartDescription.textAlign = .right
-        view.chartDescription.font = .systemFont(ofSize: 20, weight: .light)
+        view.chartDescription?.textAlign = .right
+        view.chartDescription?.font = .systemFont(ofSize: 20, weight: .light)
         view.holeColor = .clear
         return view
     }()
-    let pieExpensesChartView: PieChartView = {
+    private let pieExpensesChartView: PieChartView = {
        let view = PieChartView()
         view.backgroundColor = .clear
         view.centerAttributedText = NSAttributedString("Расходы")
-        view.chartDescription.textAlign = .right
-        view.chartDescription.font = .systemFont(ofSize: 20, weight: .light)
+        view.chartDescription?.textAlign = .right
+        view.chartDescription?.font = .systemFont(ofSize: 20, weight: .light)
         view.holeColor = .clear
         return view
     }()
@@ -124,7 +117,7 @@ class ThirdViewController: UIViewController, ChartViewDelegate {
         stackView.addArrangedSubview(monthButton)
         stackView.addArrangedSubview(yearButton)
     }
-    func setBackgrPicture() {
+    private func setBackgrPicture() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "744a72233fe313834f87ec925d562744.png")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
@@ -132,12 +125,22 @@ class ThirdViewController: UIViewController, ChartViewDelegate {
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        stackView.frame = CGRect(x: 25, y: view.bounds.maxY-125, width: view.bounds.width-50, height: 30)
-        pieIncomeChartView.frame = CGRect(x: 0, y: 100, width: view.bounds.width, height: view.bounds.height/3)
-        pieExpensesChartView.frame = CGRect(x: 0, y: view.bounds.height/2, width: view.bounds.width, height: view.bounds.height/3)
+        let inset: CGFloat = 10
+        pieIncomeChartView.frame = CGRect(x: view.bounds.minX,
+                                          y: view.bounds.minY + inset*2,
+                                          width: view.bounds.width,
+                                          height: view.bounds.height/3)
+        pieExpensesChartView.frame = CGRect(x: view.bounds.minX,
+                                            y: view.bounds.minY + inset + pieIncomeChartView.bounds.height + inset*2,
+                                            width: view.bounds.width,
+                                            height: view.bounds.height/3)
+        stackView.frame = CGRect(x: view.bounds.minX + inset*2,
+                                 y: view.bounds.minY + pieIncomeChartView.bounds.maxY + pieExpensesChartView.bounds.maxY + inset*4,
+                                 width: view.bounds.width - inset*4,
+                                 height: inset*5)
     }
     
-    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+    internal func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         print(entry)
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -157,7 +160,7 @@ class ThirdViewController: UIViewController, ChartViewDelegate {
         pieExpensesChartView.legend.enabled = false
     }
     
-    func customizeChart(categories: [String], values: [Double]) {
+    private func customizeChart(categories: [String], values: [Double]) {
         var dataEntries: [ChartDataEntry] = []
         for i in 0..<categories.count {
             let dataEntry = PieChartDataEntry(value: values[i], label: categories[i], data: categories[i] as AnyObject)
@@ -174,7 +177,7 @@ class ThirdViewController: UIViewController, ChartViewDelegate {
         pieChartData.setValueFormatter(formatter)
         pieIncomeChartView.data = pieChartData
     }
-    func customizeChart2(categories: [String], values: [Double]) {
+    private func customizeChart2(categories: [String], values: [Double]) {
         var dataEntries: [ChartDataEntry] = []
         for i in 0..<categories.count {
             let dataEntry = PieChartDataEntry(value: values[i], label: categories[i], data: categories[i] as AnyObject)

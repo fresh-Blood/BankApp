@@ -1,15 +1,8 @@
-//
-//  Model.swift
-//  Bank
-//
-//  Created by Admin on 19.10.2021.
-//
-
 import Foundation
 import UIKit
 
 
-class Income: NSObject,NSCoding {
+final class Income: NSObject,NSCoding {
     
     let date: String
     var source: String
@@ -20,7 +13,7 @@ class Income: NSObject,NSCoding {
         self.source = source
         self.date = date
     }
-    func encode(with coder: NSCoder) {
+    internal func encode(with coder: NSCoder) {
         coder.encode(summ, forKey: "summ")
         coder.encode(source, forKey: "source")
         coder.encode(date, forKey: "date")
@@ -33,7 +26,7 @@ class Income: NSObject,NSCoding {
     
 }
 
-class ViewModel: NSObject,NSCoding {
+final class ViewModel: NSObject,NSCoding {
     
     init(balance: Int) {
         self.balance = balance

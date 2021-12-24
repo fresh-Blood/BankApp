@@ -3,7 +3,7 @@ import Foundation
 import UIKit
 
 
-class Categories {
+final class Categories {
     static let share = Categories()
     
     // массивы данных для заполнения chartViewPie по доходам за все время
@@ -233,7 +233,6 @@ class Categories {
         var two: Character = "b"
         var temp = ""
         _ = ViewModel.shared.incomeArray.filter{
-            var result: String?
             let index = $0.date.index($0.date.startIndex, offsetBy: 3)
             one = $0.date[index]
             let index2 = $0.date.index($0.date.startIndex, offsetBy: 4)
@@ -245,7 +244,7 @@ class Categories {
                     monthCategoryArray.append(item)
                 }
             }
-            return (result != nil)
+            return true
         }
         monthItemsArray.removeAll()
         for item in monthCategoryArray {
@@ -266,7 +265,6 @@ class Categories {
         var two: Character = "b"
         var temp = ""
         _ = ViewModel.shared.expensesArray.filter{
-            var result: String?
             let index = $0.date.index($0.date.startIndex, offsetBy: 3)
             one = $0.date[index]
             let index2 = $0.date.index($0.date.startIndex, offsetBy: 4)
@@ -278,7 +276,7 @@ class Categories {
                     monthCategoryArray.append(item)
                 }
             }
-            return (result != nil)
+            return true
         }
         monthItemsArray.removeAll()
         for item in monthCategoryArray {
@@ -301,7 +299,6 @@ class Categories {
         var four: Character = "d"
         var temp = ""
         _ = ViewModel.shared.incomeArray.filter{
-            var result: String?
             let index = $0.date.index($0.date.startIndex, offsetBy: 6)
             one = $0.date[index]
             let index2 = $0.date.index($0.date.startIndex, offsetBy: 7)
@@ -319,7 +316,7 @@ class Categories {
                     yearCategoryArray.append(item)
                 }
             }
-            return (result != nil)
+            return true
         }
         yearItemsArray.removeAll()
         for item in yearCategoryArray {
@@ -342,7 +339,6 @@ class Categories {
         var four: Character = "d"
         var temp = ""
         _ = ViewModel.shared.expensesArray.filter{
-            var result: String?
             let index = $0.date.index($0.date.startIndex, offsetBy: 6)
             one = $0.date[index]
             let index2 = $0.date.index($0.date.startIndex, offsetBy: 7)
@@ -360,7 +356,7 @@ class Categories {
                     yearCategoryArray.append(item)
                 }
             }
-            return (result != nil)
+            return true
         }
         yearItemsArray.removeAll()
         for item in yearCategoryArray {

@@ -1,13 +1,6 @@
-//
-//  TabBarViewController.swift
-//  Bank
-//
-//  Created by Admin on 20.10.2021.
-//
-
 import UIKit
 
-class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
+final class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +9,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     }
     
     
-    func setupVCs() {
+    private func setupVCs() {
         viewControllers = [
             createNavController(for: ViewController(), title: NSLocalizedString("Доходы", comment: ""), image: UIImage(systemName: "leaf.fill")!),
             createNavController(for: SecondViewController(), title: NSLocalizedString("Расходы", comment: ""), image: UIImage(systemName: "leaf")!),
@@ -24,7 +17,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         ]
     }
     
-    fileprivate func createNavController(for rootViewController: UIViewController,
+    private func createNavController(for rootViewController: UIViewController,
                                          title: String,
                                          image: UIImage) -> UIViewController {
         let navController = UINavigationController(rootViewController: rootViewController)
@@ -37,7 +30,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         return navController
     }
     
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+    internal func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         return true
     }
 }

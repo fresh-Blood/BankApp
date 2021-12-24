@@ -1,24 +1,17 @@
-//
-//  NewCategoryViewController.swift
-//  Bank
-//
-//  Created by Admin on 27.10.2021.
-//
-
 import UIKit
 
-class NewCategoryViewController: UIViewController {
+final class NewCategoryViewController: UIViewController {
     
-    let data: UITextField = {
+    private let data: UITextField = {
         let txt = UITextField()
         txt.backgroundColor = .white
         txt.placeholder = " Укажите дату"
         return txt
     }()
-    let datePicker = UIDatePicker()
-    let toolBar = UIToolbar()
+    private let datePicker = UIDatePicker()
+    private let toolBar = UIToolbar()
     
-    func showDatePicker() {
+    private func showDatePicker() {
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.frame = CGRect(x: view.frame.minX, y: view.frame.height/3, width: view.frame.width, height: datePicker.bounds.height)
         toolBar.sizeToFit()
@@ -29,7 +22,7 @@ class NewCategoryViewController: UIViewController {
         data.inputView = datePicker
         data.inputAccessoryView = toolBar
     }
-    @objc func doneDatePicker() {
+    @objc private func doneDatePicker() {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.timeStyle = .short
@@ -37,24 +30,24 @@ class NewCategoryViewController: UIViewController {
         data.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
-    @objc func cancelDatePicker() {
+    @objc private func cancelDatePicker() {
         self.view.endEditing(true)
     }
     
-    let newCategoryTextField: UITextField = {
+    private let newCategoryTextField: UITextField = {
         let new = UITextField()
         new.placeholder = "Введите категорию"
         new.backgroundColor = .white
         return new
     }()
-    let summ: UITextField = {
+    private let summ: UITextField = {
         let txt = UITextField()
         txt.placeholder = " Введите сумму"
         txt.keyboardType = .numberPad
         txt.backgroundColor = .white
         return txt
     }()
-    let button: UIButton = {
+    private let button: UIButton = {
         let btn = UIButton()
         btn.backgroundColor = .blue
         btn.addTarget(self, action: #selector(action3), for: .touchUpInside)
@@ -67,7 +60,7 @@ class NewCategoryViewController: UIViewController {
         btn.layer.shadowOffset = CGSize.init(width: 2.0, height: 2.0)
         return btn
     }()
-    @objc func action3(sender: UIButton!) {
+    @objc private func action3(sender: UIButton!) {
         if !(data.text?.isEmpty ?? true) && !(newCategoryTextField.text?.isEmpty ?? true) && !(summ.text?.isEmpty ?? true) {
             sender.pulsate()
             ViewModel.shared.date = data.text ?? "error"
@@ -94,7 +87,7 @@ class NewCategoryViewController: UIViewController {
         summ.text = ""
     }
     
-    func setBackgrPicture() {
+    private func setBackgrPicture() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "151007-illustracia-raketa-kosmicheskoe_prostranstvo-prostranstvo_iskusstva-kosmicheskij_apparat-720x1280.png")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill

@@ -1,18 +1,9 @@
-//
-//  SecondViewController.swift
-//  Bank
-//
-//  Created by Admin on 19.10.2021.
-//
-
 import UIKit
 
-class SecondViewController: UIViewController {
+final class SecondViewController: UIViewController {
     
-    static let vc = SecondViewController()
-    
-    let myTableView = UITableView()
-    let balanceLabel: UILabel = {
+    private let myTableView = UITableView()
+    private let balanceLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Текущий баланс"
         lbl.textAlignment = .left
@@ -21,7 +12,7 @@ class SecondViewController: UIViewController {
         return lbl
     }()
     
-    let balanceValue: UILabel = {
+    private let balanceValue: UILabel = {
         let lbl = UILabel()
         lbl.text = "\(ViewModel.shared.balance)" // это просто var a = Int который 0 изначально
         lbl.textAlignment = .right
@@ -29,7 +20,7 @@ class SecondViewController: UIViewController {
         lbl.font = UIFont.systemFont(ofSize: 20, weight: .light)
         return lbl
     }()
-    let expense: UILabel = {
+    private let expense: UILabel = {
         let lbl = UILabel()
         lbl.text = "Расходы"
         lbl.textAlignment = .center
@@ -37,22 +28,25 @@ class SecondViewController: UIViewController {
         lbl.font = UIFont.systemFont(ofSize: 40, weight: .light)
         return lbl
     }()
-    let addButton: UIButton = {
+    private let addButton: UIButton = {
         let btn = UIButton()
         btn.addTarget(self, action: #selector(action), for: .touchUpInside)
         btn.setTitle("Добавить расход", for: .normal)
         btn.setTitleColor(.black, for: .normal)
         btn.backgroundColor = .systemBlue
         btn.layer.borderWidth = 2
+        btn.titleLabel?.adjustsFontSizeToFitWidth = true
+        btn.titleLabel?.numberOfLines = 0
+        btn.titleLabel?.textAlignment = .center
         btn.layer.borderColor = UIColor.black.cgColor
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .medium)
         btn.layer.cornerRadius = 25
-                btn.layer.shadowRadius = 3.0
-                btn.layer.shadowOpacity = 0.8
-                btn.layer.shadowOffset = CGSize.init(width: 2.0, height: 2.0)
+        btn.layer.shadowRadius = 3.0
+        btn.layer.shadowOpacity = 0.8
+        btn.layer.shadowOffset = CGSize.init(width: 2.0, height: 2.0)
         return btn
     }()
-    let addCategoryButton: UIButton = {
+    private let addCategoryButton: UIButton = {
         let btn = UIButton()
         btn.addTarget(self, action: #selector(newCategory), for: .touchUpInside)
         btn.setTitle("Добавить категорию", for: .normal)
@@ -61,24 +55,25 @@ class SecondViewController: UIViewController {
         btn.layer.borderWidth = 2
         btn.layer.borderColor = UIColor.black.cgColor
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .medium)
+        btn.titleLabel?.adjustsFontSizeToFitWidth = true
+        btn.titleLabel?.numberOfLines = 0
+        btn.titleLabel?.textAlignment = .center
         btn.layer.cornerRadius = 25
-                btn.layer.shadowRadius = 3.0
-                btn.layer.shadowOpacity = 0.8
-                btn.layer.shadowOffset = CGSize.init(width: 2.0, height: 2.0)
+        btn.layer.shadowRadius = 3.0
+        btn.layer.shadowOpacity = 0.8
+        btn.layer.shadowOffset = CGSize.init(width: 2.0, height: 2.0)
         return btn
     }()
-    let vc = InfoViewController2()
-    @objc func action(sender: UIButton!) {
+    @objc private func action(sender: UIButton!) {
         sender.pulsate()
-        self.present(vc, animated: true, completion: nil)
+        self.present(InfoViewController2(), animated: true, completion: nil)
     }
-    let vc1 = NewCategoryViewController()
-    @objc func newCategory(sender: UIButton!) {
+    @objc private func newCategory(sender: UIButton!) {
         sender.pulsate()
-        self.present(vc1, animated: true, completion: nil)
+        self.present(NewCategoryViewController(), animated: true, completion: nil)
     }
     
-    let dateLabel: UILabel = {
+    private let dateLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Дата"
         lbl.textAlignment = .left
@@ -86,14 +81,14 @@ class SecondViewController: UIViewController {
         lbl.font = UIFont.systemFont(ofSize: 20, weight: .light)
         return lbl
     }()
-    let sourceLabel: UILabel = {
+    private let sourceLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Категория"
         lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 20, weight: .light)
         return lbl
     }()
-    let summLabel: UILabel = {
+    private let summLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Сумма"
         lbl.textColor = .black
@@ -102,7 +97,7 @@ class SecondViewController: UIViewController {
         return lbl
     }()
     
-    func setBackgrPicture() {
+    private func setBackgrPicture() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "744a72233fe313834f87ec925d562744.png")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
@@ -128,11 +123,11 @@ class SecondViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(loadList1), name: NSNotification.Name(rawValue: "load1"), object: nil)
     }
-    @objc func loadList(){
+    @objc private func loadList(){
         balanceValue.text = String(ViewModel.shared.balance)
         myTableView.reloadData()
     }
-    @objc func loadList1(){
+    @objc private func loadList1(){
         balanceValue.text = String(ViewModel.shared.balance)
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -147,15 +142,43 @@ class SecondViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         view.layoutIfNeeded()
-        myTableView.frame = CGRect(x: view.bounds.minX, y: view.bounds.height/3, width: view.bounds.width, height: view.bounds.height/2)
-        balanceLabel.frame = CGRect(x: view.bounds.minX+20, y: 50, width: view.bounds.width/2, height: 40)
-        balanceValue.frame = CGRect(x: view.bounds.width*0.61, y: 50, width: view.bounds.width/3, height: 40)
-        expense.frame = CGRect(x: view.bounds.width/4, y: view.bounds.maxY/5, width: view.bounds.width/2, height: 40)
-        addButton.frame = CGRect(x: view.bounds.minX+20, y: view.bounds.maxY-140, width: view.bounds.width/2-25, height: 50)
-        addCategoryButton.frame = CGRect(x: view.bounds.maxX-200, y: view.bounds.maxY-140, width: view.bounds.width/2-25, height: 50)
-        dateLabel.frame = CGRect(x: view.bounds.width/12, y: view.bounds.height/3-30, width: view.bounds.width/3, height: 20)
-        sourceLabel.frame = CGRect(x: view.bounds.width/2.5, y: view.bounds.height/3-30, width: view.bounds.width/3, height: 20)
-        summLabel.frame = CGRect(x: view.bounds.width*0.61, y: view.bounds.height/3-30, width: view.bounds.width/3, height: 20)
+        let inset: CGFloat = 10
+        balanceLabel.frame = CGRect(x: view.bounds.minX + inset,
+                                    y: inset,
+                                    width: view.bounds.width/2,
+                                    height: inset*4)
+        balanceValue.frame = CGRect(x: balanceLabel.bounds.maxX,
+                                    y: inset,
+                                    width: view.bounds.width/2 - inset,
+                                    height: balanceLabel.bounds.height)
+        expense.frame = CGRect(x: balanceLabel.bounds.minX + inset,
+                               y: balanceLabel.bounds.maxY + inset,
+                               width: view.bounds.width - inset*2,
+                               height: inset*4)
+        dateLabel.frame = CGRect(x: balanceLabel.bounds.minX + inset,
+                                 y: expense.bounds.maxY + expense.bounds.maxY + inset*2,
+                                 width: view.bounds.width/3,
+                                 height: inset*2)
+        sourceLabel.frame = CGRect(x: dateLabel.bounds.maxX,
+                                   y: expense.bounds.maxY + expense.bounds.maxY + inset*2,
+                                   width: view.bounds.width/3,
+                                   height: inset*2)
+        summLabel.frame = CGRect(x: view.bounds.maxX/3*2,
+                                 y: expense.bounds.maxY + expense.bounds.maxY + inset*2,
+                                 width: view.bounds.width/3 - inset,
+                                 height: inset*2)
+        myTableView.frame = CGRect(x: view.bounds.minX,
+                                   y: balanceLabel.bounds.maxY + expense.bounds.maxY + dateLabel.bounds.maxY + inset*2,
+                                   width: view.bounds.width,
+                                   height: view.bounds.height/2)
+        addButton.frame = CGRect(x: view.bounds.minX + inset,
+                                 y: balanceLabel.bounds.maxY + expense.bounds.maxY + dateLabel.bounds.maxY + myTableView.bounds.maxY + inset*5,
+                                 width: view.bounds.width/2 - inset*2,
+                                 height: inset*5)
+        addCategoryButton.frame = CGRect(x: view.bounds.width/2 + inset,
+                                         y: balanceLabel.bounds.maxY + expense.bounds.maxY + dateLabel.bounds.maxY + myTableView.bounds.maxY + inset*5,
+                                         width: view.bounds.width/2 - inset*2,
+                                         height: inset*5)
     }
 }
 

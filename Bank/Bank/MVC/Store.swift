@@ -1,14 +1,7 @@
-//
-//  Store .swift
-//  Bank
-//
-//  Created by Admin on 20.10.2021.
-//
-
 import Foundation
 import UIKit
 
-class Store {
+final class Store {
     private enum SettingKeys: String {
         case income // 0
         case expenses // 1
