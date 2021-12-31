@@ -1,7 +1,7 @@
 import UIKit
 
 
-// MARK: создаем UITabBarController программно:
+// MARK: create UITabBarController programmatically:
 final class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
@@ -18,7 +18,7 @@ final class TabBarViewController: UITabBarController, UITabBarControllerDelegate
             createNavController(for: ThirdViewController(), title: NSLocalizedString("Графики", comment: ""), image: UIImage(systemName: "eyes")!)
         ]
     }
-    // MARK: создаем UINavigationController программно:
+    // MARK: create UINavigationController programmatically:
     private func createNavController(for rootViewController: UIViewController,
                                          title: String,
                                          image: UIImage) -> UIViewController {

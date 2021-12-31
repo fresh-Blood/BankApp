@@ -6,22 +6,22 @@ import UIKit
 final class Categories {
     static let share = Categories()
     
-    // массивы данных для заполнения chartViewPie по доходам за все время
+    // MARK: data arrays for income chartViewPie for all time
     var incomeCategoriesAllTime: [String] = []
     var incomeSummsAllTime: [Double] = []
     
-    // массивы данных для заполнения chartViewPie по расходам за все время
+    // MARK: data arrays for expenses chartViewPie for all time
     var expensesCategoriesAllTime: [String] = []
     var expensesSummsAllTime: [Double] = []
     
-    // метод по заполнению доходов за все время
+    // MARK: fill income func for all time
     var incomeDataCategoriesArray: [Income] = []
     
     func fillIncomeValuesAllTime() {
         
         var salaryItemsArray: [Income] = []
         
-        // фильтр по Salary категории
+        // MARK: Salary category filter
         let salaryTermsArray = ["Зп","З/п","Зарплата","Получка","Деньги","Бабки","Кэш","Кеш","Бабосики","Бабосы","Лавандос","Лаванда","Бабло","Money","Salary","Cash","Part-time job","Job","Подработка"]
         let salaryCategory = ViewModel.shared.incomeArray.filter{
             var result: Income?
@@ -42,7 +42,7 @@ final class Categories {
         salaryItemsArray.removeAll()
         salaryItemsArray.append(resultItemOfSalaryCategory)
         
-        // фильтр по категории семья
+        // MARK: family category filter
         var familyItemsArray: [Income] = []
         
         let familyTermsArray = ["Мама","Папа","Брат","Сестра","Сын","Дочь","Дядя","Тетя","Мамуля","Папуля","Сестренка","Mom","Mother","Pa","Father","Sister","Brother","Aunt","Auncle","Granpa","Grandma","Granfather","Grandmother","Ба","Бабуля","Бабушка","Дед","Дедушка","Дедуля","Семья","Предки","Fam","Family"]
@@ -90,14 +90,14 @@ final class Categories {
     var userTermsArray: [String] = []
     var nameOfUserCategory = ""
     
-    // метод по заполнению расходов за все время
+    // MARK: Method for filling expenses for all time
     var expensesDataCategoriesArray: [Income] = []
     
     func fillExpensesValuesAllTime() {
         
         var foodItemsArray: [Income] = []
         
-        // фильтр по категории Еда
+        // MARK: food category filter
         let foodTermsArray = ["Еда","Хавчик","Food","Вкуссвил","Лента","Магнит","Пятерочка","Пятера","Столовая","Красное белое","Фасоль","Красное и белое"]
         let foodCategory = ViewModel.shared.expensesArray.filter{
             var result: Income?
@@ -118,7 +118,7 @@ final class Categories {
         foodItemsArray.removeAll()
         foodItemsArray.append(resultItemOfFoodCategory)
         
-        // фильтр по категории развлечения
+        // MARK: "havingFun" category filter
         var attractionsItemsArray: [Income] = []
         
         let  attractionsTermsArray = ["Attractions","Развлечения","Кино","Парк аттракционов","Ресторан","Кафе","Боулинг","Рыбалка","Каршеринг","Whoosh","Urent","Film","Cafe","Аквапарк","Стрипклуб","Бар","Bar","StripClub","Massage","Массаж","Яндексдрайв","Aquapark","Bali","Бали"]
@@ -141,7 +141,7 @@ final class Categories {
         attractionsItemsArray.removeAll()
         attractionsItemsArray.append(resultItemOfAttractionsCategory)
         
-        // фильтр по категории остальное
+        // MARK: "other" category filter
         var otherItemsArray: [Income] = []
         
         let otherTermsArray = ["Переводы","Связь","Топливо","Заправка","Бензин","Одежда","Обувь","Транспорт","различные товары","Музыка","Жкх","ЖКХ","Коммуналка","Коммунальные платежи"]
@@ -164,7 +164,7 @@ final class Categories {
         otherItemsArray.removeAll()
         otherItemsArray.append(resultItemOfOtherCategory)
         
-        // фильтр по категории ВВЕЛ ПОЛЬЗОВАТЕЛЬ
+        // MARK: "userTyped" category filter
         var userItemsArray: [Income] = []
         //
         let userCategory = ViewModel.shared.expensesArray.filter{
@@ -210,19 +210,19 @@ final class Categories {
     let listIncome = ["Зп","Зарплата","Получка","Деньги","Бабки","Кэш","Кеш","Бабосики","Бабосы","Лавандос","Лаванда","Бабло","Money","Salary","Cash","Job","Подработка","Мама","Папа","Брат","Сестра","Сын","Дочь","Дядя","Тетя","Мамуля","Папуля","Сестренка","Mom","Mother","Pa","Father","Sister","Brother","Aunt","Auncle","Granpa","Grandma","Granfather","Grandmother","Ба","Бабуля","Бабушка","Дед","Дедушка","Дедуля","Семья","Предки","Fam","Family"]
     let listExpenses = ["Еда","Хавчик","Food","Вкуссвил","Лента","Магнит","Пятерочка","Пятера","Столовая","Алкомаркет","Фасоль","Attractions","Развлечения","Кино","Ресторан","Кафе","Боулинг","Рыбалка","Каршеринг","Whoosh","Urent","Film","Cafe","Аквапарк","Стрипклуб","Бар","Bar","StripClub","Massage","Массаж","Яндексдрайв","Aquapark","Bali","Бали","Переводы","Связь","Топливо","Заправка","Бензин","Одежда","Обувь","Транспорт","Скотч","Музыка","Жкх","ЖКХ","Коммуналка"]
     
-    // массивы данных для заполнения chartViewPie по доходам за месяц
+    // MARK: data arrays to fill income chartViewPie for all time
     var incomeCategoriesMonth: [String] = []
     var incomeSummsMonth: [Double] = []
     
-    // массивы данных для заполнения chartViewPie по расходам за месяц
+    // MARK: data arrays to fill expenses chartViewPie for all time
     var expensesCategoriesMonth: [String] = []
     var expensesSummsMonth: [Double] = []
     
-    // массивы данных для заполнения chartViewPie по доходам за год
+    // MARK: data arrays to fill income chartViewPie for year
     var incomeCategoriesYear: [String] = []
     var incomeSummsYear: [Double] = []
     
-    // массивы данных для заполнения chartViewPie по расходам за год
+    // MARK: data arrays to fill expenses chartViewPie for year 
     var expensesCategoriesYear: [String] = []
     var expensesSummsYear: [Double] = []
     

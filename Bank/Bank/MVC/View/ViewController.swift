@@ -20,7 +20,7 @@ final class ViewController: UIViewController {
     
     private let balanceValue: UILabel = {
         let lbl = UILabel()
-        lbl.text = "\(ViewModel.shared.balance)" // это просто var a = Int который 0 изначально
+        lbl.text = "\(ViewModel.shared.balance)" 
         lbl.textAlignment = .right
         lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 20, weight: .light)
@@ -189,8 +189,8 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let model = ViewModel.shared.incomeArray[indexPath.row]
-            ViewModel.shared.balance -= (Int(model.summ) ?? 0) // действие вычитаем
-            balanceValue.text = String(ViewModel.shared.balance) // опять чему он равен чтобы обновил
+            ViewModel.shared.balance -= (Int(model.summ) ?? 0)
+            balanceValue.text = String(ViewModel.shared.balance)
             ViewModel.shared.incomeArray.remove(at: indexPath.row)
             Categories.share.fillIncomeValuesAllTime()
             myTableView.deleteRows(at: [indexPath], with: .automatic)

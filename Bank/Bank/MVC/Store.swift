@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 
 final class Store {
+    // MARK: had fun with userDefaults 
     private enum SettingKeys: String {
         case income // 0
         case expenses // 1
