@@ -6,6 +6,7 @@ final class NewCategoryViewController: UIViewController {
         let txt = UITextField()
         txt.backgroundColor = .white
         txt.placeholder = " Укажите дату"
+        txt.textColor = .black
         return txt
     }()
     private let datePicker = UIDatePicker()
@@ -38,12 +39,14 @@ final class NewCategoryViewController: UIViewController {
         let new = UITextField()
         new.placeholder = "Введите категорию"
         new.backgroundColor = .white
+        new.textColor = .black
         return new
     }()
     private let summ: UITextField = {
         let txt = UITextField()
         txt.placeholder = " Введите сумму"
         txt.keyboardType = .numberPad
+        txt.textColor = .black
         txt.backgroundColor = .white
         return txt
     }()
@@ -89,14 +92,23 @@ final class NewCategoryViewController: UIViewController {
     
     private func setBackgrPicture() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "151007-illustracia-raketa-kosmicheskoe_prostranstvo-prostranstvo_iskusstva-kosmicheskij_apparat-720x1280.png")
+        backgroundImage.image = UIImage(named: "59ee6b4da2389.png")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
+    }
+    private func setTapPolitics() {
+        let gesture = UITapGestureRecognizer(target: self,
+                                             action: #selector(tap))
+        view.addGestureRecognizer(gesture)
+    }
+    @objc private func tap() {
+        summ.endEditing(true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         showDatePicker()
         setBackgrPicture()
+        setTapPolitics()
         view.addSubview(data)
         view.addSubview(newCategoryTextField)
         view.addSubview(summ)

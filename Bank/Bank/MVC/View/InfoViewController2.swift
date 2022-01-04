@@ -37,6 +37,7 @@ final class InfoViewController2: UIViewController, UIPickerViewDelegate, UIPicke
         let txt = UITextField()
         txt.backgroundColor = .white
         txt.placeholder = " Укажите дату"
+        txt.textColor = .black
         return txt
     }()
     private let datePicker = UIDatePicker()
@@ -69,12 +70,14 @@ final class InfoViewController2: UIViewController, UIPickerViewDelegate, UIPicke
         let txt = UITextField()
         txt.placeholder = " Укажите категорию"
         txt.backgroundColor = .white
+        txt.textColor = .black
         return txt
     }()
     private let summ: UITextField = {
         let txt = UITextField()
         txt.placeholder = " Введите сумму"
         txt.keyboardType = .numberPad
+        txt.textColor = .black
         txt.backgroundColor = .white
         
         return txt
@@ -123,10 +126,19 @@ final class InfoViewController2: UIViewController, UIPickerViewDelegate, UIPicke
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
     }
+    private func setTapPolitics() {
+        let gesture = UITapGestureRecognizer(target: self,
+                                             action: #selector(tap))
+        view.addGestureRecognizer(gesture)
+    }
+    @objc private func tap() {
+        summ.endEditing(true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         showDatePicker()
         setBackgrPicture()
+        setTapPolitics()
         view.backgroundColor = .white
         view.addSubview(data)
         view.addSubview(source)

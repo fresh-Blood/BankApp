@@ -13,7 +13,6 @@ final class ViewController: UIViewController {
         let lbl = UILabel()
         lbl.text = "Текущий баланс"
         lbl.textAlignment = .left
-        lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 20, weight: .light)
         return lbl
     }()
@@ -22,7 +21,6 @@ final class ViewController: UIViewController {
         let lbl = UILabel()
         lbl.text = "\(ViewModel.shared.balance)" 
         lbl.textAlignment = .right
-        lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 20, weight: .light)
         lbl.adjustsFontSizeToFitWidth = true 
         return lbl
@@ -31,7 +29,6 @@ final class ViewController: UIViewController {
         let lbl = UILabel()
         lbl.text = "Доходы"
         lbl.textAlignment = .center
-        lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 40, weight: .light)
         return lbl
     }()
@@ -61,14 +58,13 @@ final class ViewController: UIViewController {
         let lbl = UILabel()
         lbl.text = "Дата"
         lbl.textAlignment = .left
-        lbl.textColor = .black
+        lbl.textAlignment = .center
         lbl.font = UIFont.systemFont(ofSize: 20, weight: .light)
         return lbl
     }()
     private let sourceLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Источник"
-        lbl.textColor = .black
         lbl.textAlignment = .center
         lbl.font = UIFont.systemFont(ofSize: 20, weight: .light)
         return lbl
@@ -76,18 +72,12 @@ final class ViewController: UIViewController {
     private let summLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Сумма"
-        lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 20, weight: .light)
         lbl.textAlignment = .right
+        lbl.textAlignment = .center
         return lbl
     }()
     
-    private func setBackgrPicture() {
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "744a72233fe313834f87ec925d562744.png")
-        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
-        self.view.insertSubview(backgroundImage, at: 0)
-    }
     private let scrollView: UIScrollView = {
        let scr = UIScrollView()
         return scr
@@ -97,8 +87,7 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         myTableView.delegate = self
         myTableView.dataSource = self
-        setBackgrPicture()
-        view.addSubview(scrollView)
+        view.backgroundColor = .systemGroupedBackground
         scrollView.addSubview(myTableView)
         scrollView.addSubview(balanceLabel)
         scrollView.addSubview(balanceValue)
@@ -107,6 +96,7 @@ final class ViewController: UIViewController {
         scrollView.addSubview(dateLabel)
         scrollView.addSubview(sourceLabel)
         scrollView.addSubview(summLabel)
+        view.addSubview(scrollView)
         NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(loadList1), name: NSNotification.Name(rawValue: "load1"), object: nil)
     }
@@ -126,42 +116,39 @@ final class ViewController: UIViewController {
         super.viewDidLayoutSubviews()
         view.layoutIfNeeded()
         let inset: CGFloat = 10
-        scrollView.contentSize = CGSize(width: view.bounds.width, height: view.bounds.width+10)
-        scrollView.frame = CGRect(x: view.bounds.minX,
-                                  y: view.bounds.minY,
-                                  width: view.bounds.width,
-                                  height: view.bounds.height + inset)
-        balanceLabel.frame = CGRect(x: view.bounds.minX + inset,
-                                    y: inset,
-                                    width: view.bounds.width/2,
+        scrollView.contentSize = CGSize(width: scrollView.bounds.width, height: scrollView.bounds.width+1)
+        scrollView.frame = view.bounds
+        balanceLabel.frame = CGRect(x: scrollView.bounds.minX + inset + view.safeAreaInsets.left,
+                                    y: scrollView.bounds.minY + inset*4,
+                                    width: scrollView.bounds.width/2,
                                     height: inset*4)
-        balanceValue.frame = CGRect(x: balanceLabel.bounds.maxX,
-                                    y: inset,
-                                    width: view.bounds.width/2 - inset,
-                                    height: balanceLabel.bounds.height)
-        income.frame = CGRect(x: balanceLabel.bounds.minX + inset,
+        balanceValue.frame = CGRect(x: balanceLabel.bounds.maxX - inset,
+                                    y: scrollView.bounds.minY + inset*4,
+                                    width: scrollView.bounds.width/2 - view.safeAreaInsets.right,
+                                    height: inset*4)
+        income.frame = CGRect(x: scrollView.bounds.minX + view.safeAreaInsets.left,
                               y: balanceLabel.bounds.maxY + inset,
-                              width: view.bounds.width - inset*2,
+                              width: scrollView.bounds.width - view.safeAreaInsets.left - view.safeAreaInsets.right,
                               height: inset*4)
-        dateLabel.frame = CGRect(x: balanceLabel.bounds.minX + inset,
+        dateLabel.frame = CGRect(x: scrollView.bounds.minX + view.safeAreaInsets.left,
                                  y: income.bounds.maxY + income.bounds.maxY + inset*2,
-                                 width: view.bounds.width/3,
+                                 width: (scrollView.bounds.width - view.safeAreaInsets.right - view.safeAreaInsets.left)/3,
                                  height: inset*2)
-        sourceLabel.frame = CGRect(x: dateLabel.bounds.maxX,
+        sourceLabel.frame = CGRect(x: scrollView.bounds.maxX/3,
                                    y: income.bounds.maxY + income.bounds.maxY + inset*2,
-                                   width: view.bounds.width/3,
+                                   width: scrollView.bounds.width/3,
                                    height: inset*2)
-        summLabel.frame = CGRect(x: view.bounds.maxX/3*2,
+        summLabel.frame = CGRect(x: scrollView.bounds.maxX/3*2,
                                  y: income.bounds.maxY + income.bounds.maxY + inset*2,
-                                 width: view.bounds.width/3 - inset,
+                                 width: scrollView.bounds.width/3 - view.safeAreaInsets.right,
                                  height: inset*2)
-        myTableView.frame = CGRect(x: view.bounds.minX,
+        myTableView.frame = CGRect(x: scrollView.bounds.minX,
                                    y: balanceLabel.bounds.maxY + income.bounds.maxY + dateLabel.bounds.maxY + inset*2,
-                                   width: view.bounds.width,
-                                   height: view.bounds.height/2)
-        addButton.frame = CGRect(x: view.bounds.maxX/4,
+                                   width: scrollView.bounds.width - view.safeAreaInsets.left,
+                                   height: scrollView.bounds.height/2)
+        addButton.frame = CGRect(x: scrollView.bounds.maxX/4,
                                  y: balanceLabel.bounds.maxY + income.bounds.maxY + dateLabel.bounds.maxY + myTableView.bounds.maxY + inset*5,
-                                 width: view.bounds.width/2,
+                                 width: scrollView.bounds.width/2,
                                  height: 50)
     }
     override func viewWillAppear(_ animated: Bool) {

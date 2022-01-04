@@ -79,7 +79,6 @@ final class ThirdViewController: UIViewController, ChartViewDelegate {
        let stck = UIStackView()
         stck.isUserInteractionEnabled = true
         stck.backgroundColor = .clear
-        stck.spacing = 5
         stck.alignment = .center
         stck.distribution = .fillEqually
         stck.layer.shadowRadius = 3.0
@@ -109,7 +108,7 @@ final class ThirdViewController: UIViewController, ChartViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBackgrPicture()
+        view.backgroundColor = .systemGroupedBackground
         view.addSubview(stackView)
         view.addSubview(pieIncomeChartView)
         view.addSubview(pieExpensesChartView)
@@ -117,26 +116,21 @@ final class ThirdViewController: UIViewController, ChartViewDelegate {
         stackView.addArrangedSubview(monthButton)
         stackView.addArrangedSubview(yearButton)
     }
-    private func setBackgrPicture() {
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "744a72233fe313834f87ec925d562744.png")
-        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
-        self.view.insertSubview(backgroundImage, at: 0)
-    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let inset: CGFloat = 10
         pieIncomeChartView.frame = CGRect(x: view.bounds.minX,
-                                          y: view.bounds.minY + inset*2,
+                                          y: view.bounds.minY + view.safeAreaInsets.top/2,
                                           width: view.bounds.width,
                                           height: view.bounds.height/3)
         pieExpensesChartView.frame = CGRect(x: view.bounds.minX,
-                                            y: view.bounds.minY + inset + pieIncomeChartView.bounds.height + inset*2,
+                                            y: view.bounds.minY + view.safeAreaInsets.top/2 + pieIncomeChartView.bounds.height + inset,
                                             width: view.bounds.width,
                                             height: view.bounds.height/3)
-        stackView.frame = CGRect(x: view.bounds.minX + inset*2,
-                                 y: view.bounds.minY + pieIncomeChartView.bounds.maxY + pieExpensesChartView.bounds.maxY + inset*4,
-                                 width: view.bounds.width - inset*4,
+        stackView.frame = CGRect(x: view.bounds.minX + inset + view.safeAreaInsets.left,
+                                 y: view.bounds.minY + view.safeAreaInsets.top/2 + pieIncomeChartView.bounds.height + pieExpensesChartView.bounds.height + inset,
+                                 width: view.bounds.width - view.safeAreaInsets.left*2 - inset*2,
                                  height: inset*5)
     }
     
@@ -170,7 +164,7 @@ final class ThirdViewController: UIViewController, ChartViewDelegate {
         pieChartDataSet.colors = colorsOfCharts(numbersOfColors: categories.count)
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
         let format = NumberFormatter()
-        format.numberStyle = .percent
+        format.numberStyle = .currency
         format.maximumFractionDigits = 1
         format.multiplier = 1.0
         let formatter = DefaultValueFormatter(formatter: format)
@@ -187,7 +181,7 @@ final class ThirdViewController: UIViewController, ChartViewDelegate {
         pieChartDataSet.colors = colorsOfCharts(numbersOfColors: categories.count)
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
         let format = NumberFormatter()
-        format.numberStyle = .percent
+        format.numberStyle = .currency
         format.maximumFractionDigits = 1
         format.multiplier = 1.0
         let formatter = DefaultValueFormatter(formatter: format)
