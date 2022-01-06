@@ -1,4 +1,5 @@
 import UIKit
+import LocalAuthentication
 
 
 // MARK: create UITabBarController programmatically:
@@ -10,7 +11,6 @@ final class TabBarViewController: UITabBarController, UITabBarControllerDelegate
         setupVCs()
     }
     
-    
     private func setupVCs() {
         viewControllers = [
             createNavController(for: ViewController(), title: NSLocalizedString("Доходы", comment: ""), image: UIImage(systemName: "leaf.fill")!),
@@ -20,8 +20,8 @@ final class TabBarViewController: UITabBarController, UITabBarControllerDelegate
     }
     // MARK: create UINavigationController programmatically:
     private func createNavController(for rootViewController: UIViewController,
-                                         title: String,
-                                         image: UIImage) -> UIViewController {
+                                     title: String,
+                                     image: UIImage) -> UIViewController {
         let navController = UINavigationController(rootViewController: rootViewController)
         navController.tabBarItem.title = title
         navController.tabBarItem.image = image
