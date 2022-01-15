@@ -69,11 +69,13 @@ final class SecondViewController: UIViewController {
     }()
     @objc private func action(sender: UIButton!) {
         sender.pulsate()
-        self.present(InfoViewController2(), animated: true, completion: nil)
+        navigationController?.pushViewController(InfoViewController2(),
+                                                 animated: true)
     }
     @objc private func newCategory(sender: UIButton!) {
         sender.pulsate()
-        self.present(NewCategoryViewController(), animated: true, completion: nil)
+        navigationController?.pushViewController(NewCategoryViewController(),
+                                                 animated: true)
     }
     
     private let dateLabel: UILabel = {

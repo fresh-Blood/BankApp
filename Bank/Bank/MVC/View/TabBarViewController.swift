@@ -21,12 +21,15 @@ final class TabBarViewController: UITabBarController, UITabBarControllerDelegate
     // MARK: create UINavigationController programmatically:
     private func createNavController(for rootViewController: UIViewController,
                                      title: String,
-                                     image: UIImage) -> UIViewController {
+                                     image: UIImage) -> UINavigationController {
         let navController = UINavigationController(rootViewController: rootViewController)
         navController.tabBarItem.title = title
         navController.tabBarItem.image = image
-        tabBar.barStyle = .black
-        tabBar.tintColor = .white
+        tabBar.barStyle = .default
+        tabBar.tintColor = .systemGroupedBackground
+        tabBar.backgroundColor = .systemBlue
+        tabBar.unselectedItemTintColor = .darkGray
+        
         navController.navigationBar.prefersLargeTitles = true
         rootViewController.navigationItem.title = nil
         return navController

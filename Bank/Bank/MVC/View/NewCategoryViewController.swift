@@ -2,15 +2,38 @@ import UIKit
 
 final class NewCategoryViewController: UIViewController {
     
-    private let data: UITextField = {
-        let txt = UITextField()
-        txt.backgroundColor = .white
-        txt.placeholder = " Укажите дату"
-        txt.textColor = .black
-        return txt
-    }()
     private let datePicker = UIDatePicker()
     private let toolBar = UIToolbar()
+    
+    private let data: UITextField = {
+        let txt = UITextField()
+        txt.placeholder = "Укажите дату"
+        txt.textAlignment = .center
+        txt.textColor = .label
+        txt.layer.cornerRadius = 8
+        txt.layer.borderWidth = 1
+        return txt
+    }()
+    
+    private let newCategoryTextField: UITextField = {
+        let new = UITextField()
+        new.placeholder = "Введите категорию"
+        new.textAlignment = .center
+        new.textColor = .label
+        new.layer.cornerRadius = 8
+        new.layer.borderWidth = 1
+        return new
+    }()
+    private let summ: UITextField = {
+        let txt = UITextField()
+        txt.placeholder = "Введите сумму"
+        txt.keyboardType = .numberPad
+        txt.textAlignment = .center
+        txt.textColor = .label
+        txt.layer.cornerRadius = 8
+        txt.layer.borderWidth = 1
+        return txt
+    }()
     
     private func showDatePicker() {
         datePicker.preferredDatePickerStyle = .wheels
@@ -34,22 +57,7 @@ final class NewCategoryViewController: UIViewController {
     @objc private func cancelDatePicker() {
         self.view.endEditing(true)
     }
-    
-    private let newCategoryTextField: UITextField = {
-        let new = UITextField()
-        new.placeholder = "Введите категорию"
-        new.backgroundColor = .white
-        new.textColor = .black
-        return new
-    }()
-    private let summ: UITextField = {
-        let txt = UITextField()
-        txt.placeholder = " Введите сумму"
-        txt.keyboardType = .numberPad
-        txt.textColor = .black
-        txt.backgroundColor = .white
-        return txt
-    }()
+   
     private let button: UIButton = {
         let btn = UIButton()
         btn.backgroundColor = .blue
@@ -79,23 +87,15 @@ final class NewCategoryViewController: UIViewController {
             ViewModel.shared.summ = summ.text ?? "error"
             ViewModel.shared.balance -= Int(summ.text ?? "Empty") ?? 0
             ViewModel.shared.addExpenses()
-            
             Categories.share.fillExpensesValuesAllTime()
         }
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load1"), object: nil)
-        self.dismiss(animated: true, completion: nil)
         data.text = ""
         newCategoryTextField.text = ""
         summ.text = ""
     }
     
-    private func setBackgrPicture() {
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "59ee6b4da2389.png")
-        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
-        self.view.insertSubview(backgroundImage, at: 0)
-    }
     private func setTapPolitics() {
         let gesture = UITapGestureRecognizer(target: self,
                                              action: #selector(tap))
@@ -107,8 +107,8 @@ final class NewCategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showDatePicker()
-        setBackgrPicture()
         setTapPolitics()
+        view.backgroundColor = .systemGroupedBackground
         view.addSubview(data)
         view.addSubview(newCategoryTextField)
         view.addSubview(summ)
@@ -121,6 +121,8 @@ final class NewCategoryViewController: UIViewController {
         summ.frame = CGRect(x: view.bounds.width/4, y: view.bounds.height/2.5, width: view.bounds.width/2, height: 30)
         newCategoryTextField.frame = CGRect(x: view.bounds.width/4, y: view.bounds.height/3.07, width: view.bounds.width/2, height: 30)
         button.frame = CGRect(x: view.bounds.midX-50, y: view.bounds.height/2, width: 100, height: 100)
+        data.layer.borderColor = UIColor.label.cgColor
+        newCategoryTextField.layer.borderColor = UIColor.label.cgColor
+        summ.layer.borderColor = UIColor.label.cgColor
     }
-    
 }

@@ -4,6 +4,37 @@ import UIKit
 
 final class InfoViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
+    private let data: UITextField = {
+        let txt = UITextField()
+        txt.placeholder = "Укажите дату"
+        txt.textAlignment = .center
+        txt.textColor = .label
+        txt.layer.cornerRadius = 8
+        txt.layer.borderWidth = 1
+        return txt
+    }()
+    
+    private let source: UITextField = {
+        let txt = UITextField()
+        txt.placeholder = "Укажите источник"
+        txt.textAlignment = .center
+        txt.textColor = .label
+        txt.layer.cornerRadius = 8
+        txt.layer.borderWidth = 1
+        return txt
+    }()
+    
+    private let summ: UITextField = {
+        let txt = UITextField()
+        txt.placeholder = "Введите сумму"
+        txt.keyboardType = .numberPad
+        txt.textAlignment = .center
+        txt.textColor = .label
+        txt.layer.cornerRadius = 8
+        txt.layer.borderWidth = 1
+        return txt
+    }()
+    
     private let dropDown: UIPickerView = {
         let pkr = UIPickerView()
         pkr.backgroundColor = .systemGray6
@@ -33,13 +64,6 @@ final class InfoViewController : UIViewController, UIPickerViewDelegate, UIPicke
         }
     }
     
-    private let data: UITextField = {
-        let txt = UITextField()
-        txt.backgroundColor = .white
-        txt.placeholder = " Укажите дату"
-        txt.textColor = .black
-        return txt
-    }()
     private let datePicker = UIDatePicker()
     private let toolBar = UIToolbar()
     private func showDatePicker() {
@@ -65,21 +89,6 @@ final class InfoViewController : UIViewController, UIPickerViewDelegate, UIPicke
         self.view.endEditing(true)
     }
     
-    private let source: UITextField = {
-        let txt = UITextField()
-        txt.placeholder = " Укажите источник"
-        txt.backgroundColor = .white
-        txt.textColor = .black
-        return txt
-    }()
-    private let summ: UITextField = {
-        let txt = UITextField()
-        txt.placeholder = " Введите сумму"
-        txt.keyboardType = .numberPad
-        txt.backgroundColor = .white
-        txt.textColor = .black
-        return txt
-    }()
     private let button: UIButton = {
         let btn = UIButton()
         btn.backgroundColor = .red
@@ -108,25 +117,15 @@ final class InfoViewController : UIViewController, UIPickerViewDelegate, UIPicke
             ViewModel.shared.summ = summ.text ?? "error"
             ViewModel.shared.balance += Int(summ.text ?? "Empty") ?? 0
             ViewModel.shared.addEarnings()
-            
             Categories.share.fillIncomeValuesAllTime()
         }
-        
-        
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load1"), object: nil)
-        self.dismiss(animated: true, completion: nil)
         data.text = ""
         source.text = ""
         summ.text = ""
     }
     
-    private func setBackgrPicture() {
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "490962102.png")
-        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
-        self.view.insertSubview(backgroundImage, at: 0)
-    }
     private func setTapPolitics() {
         let gesture = UITapGestureRecognizer(target: self,
                                              action: #selector(tap))
@@ -139,9 +138,8 @@ final class InfoViewController : UIViewController, UIPickerViewDelegate, UIPicke
     override func viewDidLoad() {
         super.viewDidLoad()
         showDatePicker()
-        setBackgrPicture()
         setTapPolitics()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemGroupedBackground
         view.addSubview(data)
         view.addSubview(source)
         view.addSubview(summ)
@@ -160,6 +158,9 @@ final class InfoViewController : UIViewController, UIPickerViewDelegate, UIPicke
         summ.frame = CGRect(x: view.bounds.width/4, y: view.bounds.height/2.5, width: view.bounds.width/2, height: 30)
         button.frame = CGRect(x: view.bounds.midX-50, y: view.bounds.height/2, width: 100, height: 100)
         dropDown.frame = CGRect(x: 0, y: view.bounds.height/2.5, width: view.bounds.width, height: view.bounds.height/3)
+        data.layer.borderColor = UIColor.label.cgColor
+        source.layer.borderColor = UIColor.label.cgColor
+        summ.layer.borderColor = UIColor.label.cgColor
     }
 }
 

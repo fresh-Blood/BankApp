@@ -49,9 +49,11 @@ final class ViewController: UIViewController {
     }()
     @objc private func action(sender: UIButton!) {
         sender.pulsate()
-        self.present(InfoViewController(),
-                     animated: true,
-                     completion: nil)
+//        self.present(InfoViewController(),
+//                     animated: true,
+//                     completion: nil)
+        navigationController?.pushViewController(InfoViewController(),
+                                                 animated: true)
     }
     
     private let dateLabel: UILabel = {

@@ -2,7 +2,7 @@ import UIKit
 
 
 
-class StartViewController: UIViewController {
+final class StartViewController: UIViewController {
     
     private let neo: UIImageView = {
        let img = UIImageView()
@@ -15,10 +15,6 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(neo)
         neo.image = UIImage(named: "Neo")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         start()
     }
     
