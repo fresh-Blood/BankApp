@@ -31,6 +31,7 @@
 		B5F2786627A3131D00B46EDF /* Test3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2786527A3131D00B46EDF /* Test3.swift */; };
 		B5F2786827A3166000B46EDF /* test4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2786727A3166000B46EDF /* test4.swift */; };
 		B5F2786A27A31ED000B46EDF /* test6.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2786927A31ED000B46EDF /* test6.swift */; };
+		B5F2786C27A31F3700B46EDF /* test7.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2786B27A31F3700B46EDF /* test7.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		B5F2786527A3131D00B46EDF /* Test3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test3.swift; sourceTree = "<group>"; };
 		B5F2786727A3166000B46EDF /* test4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test4.swift; sourceTree = "<group>"; };
 		B5F2786927A31ED000B46EDF /* test6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test6.swift; sourceTree = "<group>"; };
+		B5F2786B27A31F3700B46EDF /* test7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test7.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				84F5AA3B272062910086DDCF /* CustomCell2.swift */,
 				84E2D7BE271EE79A00D476F8 /* Charts.swift */,
 				B5D1375F27A2A98700779559 /* Test2.swift */,
+				B5F2786B27A31F3700B46EDF /* test7.swift */,
 				B5F2786927A31ED000B46EDF /* test6.swift */,
 				B5F2786727A3166000B46EDF /* test4.swift */,
 				B5F2786527A3131D00B46EDF /* Test3.swift */,
@@ -225,6 +228,7 @@
 				B5F2786627A3131D00B46EDF /* Test3.swift in Sources */,
 				842A698C2720323A007CFC49 /* Store.swift in Sources */,
 				843D71972722E08E00F44F56 /* Categories.swift in Sources */,
+				B5F2786C27A31F3700B46EDF /* test7.swift in Sources */,
 				84F5AA3A2720607D0086DDCF /* InfoViewController2.swift in Sources */,
 				84E2D7A5271EE40C00D476F8 /* ViewController.swift in Sources */,
 				844D35B62787118300CC038D /* BiometryPolitics .swift in Sources */,
