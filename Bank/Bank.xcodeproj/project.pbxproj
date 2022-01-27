@@ -27,6 +27,7 @@
 		84E2D7BF271EE79A00D476F8 /* Charts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2D7BE271EE79A00D476F8 /* Charts.swift */; };
 		84F5AA3A2720607D0086DDCF /* InfoViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5AA392720607D0086DDCF /* InfoViewController2.swift */; };
 		84F5AA3C272062910086DDCF /* CustomCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5AA3B272062910086DDCF /* CustomCell2.swift */; };
+		B5F2787227A3262200B46EDF /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2787127A3262200B46EDF /* test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		84E2D7BE271EE79A00D476F8 /* Charts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts.swift; sourceTree = "<group>"; };
 		84F5AA392720607D0086DDCF /* InfoViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController2.swift; sourceTree = "<group>"; };
 		84F5AA3B272062910086DDCF /* CustomCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell2.swift; sourceTree = "<group>"; };
+		B5F2787127A3262200B46EDF /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				8438A43B271EEC1B00791ED1 /* CustomCell.swift */,
 				84F5AA3B272062910086DDCF /* CustomCell2.swift */,
 				84E2D7BE271EE79A00D476F8 /* Charts.swift */,
+				B5F2787127A3262200B46EDF /* test.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				844D35B8278712D200CC038D /* StartViewController.swift in Sources */,
 				84E2D7AB271EE40C00D476F8 /* Bank.xcdatamodeld in Sources */,
 				84E2D7A1271EE40C00D476F8 /* AppDelegate.swift in Sources */,
+				B5F2787227A3262200B46EDF /* test.swift in Sources */,
 				84E2D7BB271EE5BF00D476F8 /* Model.swift in Sources */,
 				84E2D7BD271EE78C00D476F8 /* SecondViewController.swift in Sources */,
 				84E2D7BF271EE79A00D476F8 /* Charts.swift in Sources */,
