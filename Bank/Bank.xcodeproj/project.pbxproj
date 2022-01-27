@@ -27,11 +27,6 @@
 		84E2D7BF271EE79A00D476F8 /* Charts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2D7BE271EE79A00D476F8 /* Charts.swift */; };
 		84F5AA3A2720607D0086DDCF /* InfoViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5AA392720607D0086DDCF /* InfoViewController2.swift */; };
 		84F5AA3C272062910086DDCF /* CustomCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5AA3B272062910086DDCF /* CustomCell2.swift */; };
-		B5D1376027A2A98700779559 /* Test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D1375F27A2A98700779559 /* Test2.swift */; };
-		B5F2786627A3131D00B46EDF /* Test3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2786527A3131D00B46EDF /* Test3.swift */; };
-		B5F2786827A3166000B46EDF /* test4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2786727A3166000B46EDF /* test4.swift */; };
-		B5F2786A27A31ED000B46EDF /* test6.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2786927A31ED000B46EDF /* test6.swift */; };
-		B5F2786C27A31F3700B46EDF /* test7.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2786B27A31F3700B46EDF /* test7.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,11 +51,6 @@
 		84E2D7BE271EE79A00D476F8 /* Charts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts.swift; sourceTree = "<group>"; };
 		84F5AA392720607D0086DDCF /* InfoViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController2.swift; sourceTree = "<group>"; };
 		84F5AA3B272062910086DDCF /* CustomCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell2.swift; sourceTree = "<group>"; };
-		B5D1375F27A2A98700779559 /* Test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test2.swift; sourceTree = "<group>"; };
-		B5F2786527A3131D00B46EDF /* Test3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test3.swift; sourceTree = "<group>"; };
-		B5F2786727A3166000B46EDF /* test4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test4.swift; sourceTree = "<group>"; };
-		B5F2786927A31ED000B46EDF /* test6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test6.swift; sourceTree = "<group>"; };
-		B5F2786B27A31F3700B46EDF /* test7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test7.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,11 +79,6 @@
 				8438A43B271EEC1B00791ED1 /* CustomCell.swift */,
 				84F5AA3B272062910086DDCF /* CustomCell2.swift */,
 				84E2D7BE271EE79A00D476F8 /* Charts.swift */,
-				B5D1375F27A2A98700779559 /* Test2.swift */,
-				B5F2786B27A31F3700B46EDF /* test7.swift */,
-				B5F2786927A31ED000B46EDF /* test6.swift */,
-				B5F2786727A3166000B46EDF /* test4.swift */,
-				B5F2786527A3131D00B46EDF /* Test3.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -225,10 +210,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5F2786627A3131D00B46EDF /* Test3.swift in Sources */,
 				842A698C2720323A007CFC49 /* Store.swift in Sources */,
 				843D71972722E08E00F44F56 /* Categories.swift in Sources */,
-				B5F2786C27A31F3700B46EDF /* test7.swift in Sources */,
 				84F5AA3A2720607D0086DDCF /* InfoViewController2.swift in Sources */,
 				84E2D7A5271EE40C00D476F8 /* ViewController.swift in Sources */,
 				844D35B62787118300CC038D /* BiometryPolitics .swift in Sources */,
@@ -236,16 +219,13 @@
 				84F5AA3C272062910086DDCF /* CustomCell2.swift in Sources */,
 				8438A43E271EFB4A00791ED1 /* InfoViewController.swift in Sources */,
 				844B305F2729473100A55A9C /* NewCategoryViewController.swift in Sources */,
-				B5F2786827A3166000B46EDF /* test4.swift in Sources */,
 				8438A43C271EEC1B00791ED1 /* CustomCell.swift in Sources */,
 				844D35B8278712D200CC038D /* StartViewController.swift in Sources */,
 				84E2D7AB271EE40C00D476F8 /* Bank.xcdatamodeld in Sources */,
-				B5D1376027A2A98700779559 /* Test2.swift in Sources */,
 				84E2D7A1271EE40C00D476F8 /* AppDelegate.swift in Sources */,
 				84E2D7BB271EE5BF00D476F8 /* Model.swift in Sources */,
 				84E2D7BD271EE78C00D476F8 /* SecondViewController.swift in Sources */,
 				84E2D7BF271EE79A00D476F8 /* Charts.swift in Sources */,
-				B5F2786A27A31ED000B46EDF /* test6.swift in Sources */,
 				84E2D7A3271EE40C00D476F8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
