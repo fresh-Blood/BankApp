@@ -28,6 +28,7 @@
 		84F5AA3A2720607D0086DDCF /* InfoViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5AA392720607D0086DDCF /* InfoViewController2.swift */; };
 		84F5AA3C272062910086DDCF /* CustomCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5AA3B272062910086DDCF /* CustomCell2.swift */; };
 		B5F2787227A3262200B46EDF /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2787127A3262200B46EDF /* test.swift */; };
+		B5F2787427A326A500B46EDF /* test1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2787327A326A500B46EDF /* test1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		84F5AA392720607D0086DDCF /* InfoViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController2.swift; sourceTree = "<group>"; };
 		84F5AA3B272062910086DDCF /* CustomCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell2.swift; sourceTree = "<group>"; };
 		B5F2787127A3262200B46EDF /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		B5F2787327A326A500B46EDF /* test1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				84F5AA3B272062910086DDCF /* CustomCell2.swift */,
 				84E2D7BE271EE79A00D476F8 /* Charts.swift */,
 				B5F2787127A3262200B46EDF /* test.swift */,
+				B5F2787327A326A500B46EDF /* test1.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				842A698C2720323A007CFC49 /* Store.swift in Sources */,
 				843D71972722E08E00F44F56 /* Categories.swift in Sources */,
 				84F5AA3A2720607D0086DDCF /* InfoViewController2.swift in Sources */,
+				B5F2787427A326A500B46EDF /* test1.swift in Sources */,
 				84E2D7A5271EE40C00D476F8 /* ViewController.swift in Sources */,
 				844D35B62787118300CC038D /* BiometryPolitics .swift in Sources */,
 				842A698E27204656007CFC49 /* TabBarViewController.swift in Sources */,
