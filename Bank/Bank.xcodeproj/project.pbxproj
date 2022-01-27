@@ -29,6 +29,7 @@
 		84F5AA3C272062910086DDCF /* CustomCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5AA3B272062910086DDCF /* CustomCell2.swift */; };
 		B5D1376027A2A98700779559 /* Test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D1375F27A2A98700779559 /* Test2.swift */; };
 		B5F2786627A3131D00B46EDF /* Test3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2786527A3131D00B46EDF /* Test3.swift */; };
+		B5F2786827A3166000B46EDF /* test4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2786727A3166000B46EDF /* test4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		84F5AA3B272062910086DDCF /* CustomCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell2.swift; sourceTree = "<group>"; };
 		B5D1375F27A2A98700779559 /* Test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test2.swift; sourceTree = "<group>"; };
 		B5F2786527A3131D00B46EDF /* Test3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test3.swift; sourceTree = "<group>"; };
+		B5F2786727A3166000B46EDF /* test4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test4.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				84F5AA3B272062910086DDCF /* CustomCell2.swift */,
 				84E2D7BE271EE79A00D476F8 /* Charts.swift */,
 				B5D1375F27A2A98700779559 /* Test2.swift */,
+				B5F2786727A3166000B46EDF /* test4.swift */,
 				B5F2786527A3131D00B46EDF /* Test3.swift */,
 			);
 			path = View;
@@ -226,6 +229,7 @@
 				84F5AA3C272062910086DDCF /* CustomCell2.swift in Sources */,
 				8438A43E271EFB4A00791ED1 /* InfoViewController.swift in Sources */,
 				844B305F2729473100A55A9C /* NewCategoryViewController.swift in Sources */,
+				B5F2786827A3166000B46EDF /* test4.swift in Sources */,
 				8438A43C271EEC1B00791ED1 /* CustomCell.swift in Sources */,
 				844D35B8278712D200CC038D /* StartViewController.swift in Sources */,
 				84E2D7AB271EE40C00D476F8 /* Bank.xcdatamodeld in Sources */,
